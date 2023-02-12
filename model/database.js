@@ -32,7 +32,7 @@ function createTables() {
   db.run(
     `CREATE TABLE IF NOT EXISTS notes(
       id INTEGER PRIMARY KEY AUTOINCREMENT,
-      title TEXT NOT NULL,
+      title TEXT,
       content TEXT NOT NULL,
       created_at TEXT NOT NULL,
       user_id INTEGER NOT NULL,

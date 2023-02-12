@@ -7,11 +7,12 @@ exports.note_detail = function(req, res, next) {
 }
 
 exports.note_create_get = function (req, res, next) {
-  res.send("NOT IMPLEMENTED: Création d'une note get !");
+  res.render('note_create', {title: "Une nouvelle note"})
 }
 
 exports.note_create_post = function (req, res, next) {
   res.send("NOT IMPLEMENTED: Création d'une note post !");
+  console.log(req.body)
 }
 
 exports.note_update_get = function (req, res, next) {
