@@ -1,0 +1,20 @@
+extends layout 
+
+block content 
+  h1=title
+
+  if(note_details)
+    form(action=`/notes/${note_details.id}/update` method="post") 
+      input(name="title" placeholder="Titre de votre note" value=note_details.title)
+      br
+      textarea(name="content", cols="30", rows="10",  placeholder="Saisissez votre note ...") #{note_details.content}
+      br
+      button(type="submit") Enregistrer
+
+  else
+    form(action="/notes/create" method="post") 
+      input(name="title" placeholder="Titre de votre note")
+      br
+      textarea(name="content", cols="30", rows="10",  placeholder="Saisissez votre note ...")
+      br
+      button(type="submit") Enregistrer

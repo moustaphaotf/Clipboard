@@ -1,0 +1,10 @@
+extends layout 
+
+block content 
+
+  h2=note_details.title 
+  p 
+    strong Date de création: 
+    | #{note_details.created_at}
+  a(href=`/notes/${note_details.id}/update`) Modifier
+  div=note_details.content
