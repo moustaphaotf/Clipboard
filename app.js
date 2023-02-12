@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var notesRouter = require('./routes/notes');
 
 var app = express();
 
@@ -26,7 +27,8 @@ database.createTables();
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.get('/populate', database.populate)
+app.use('/notes', notesRouter);
+app.get('/populate', database.populate);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
