@@ -1,0 +1,10 @@
+extends layout 
+
+block content
+  h1=title
+  ul 
+    each note in notes_list
+      li
+        a(href="/notes/" + note.id) #{note.title} #{note.created_at}
+    else 
+      li La liste des notes est vide

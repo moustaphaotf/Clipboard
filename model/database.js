@@ -55,24 +55,24 @@ function populate(req, res, next) {
       DELETE FROM notes;
       DELETE FROM users;
 
-      INSERT INTO users(username, confirmed) VALUES
-      ('root', 1),
-      ('oury', 1),
-      ('conte', 1),
-      ('moustapha', 0),
-      ('sumptring', 1);
+      INSERT INTO users(id,username, confirmed) VALUES
+      (1,'root', 1),
+      (2,'oury', 1),
+      (3,'conte', 1),
+      (4,'moustapha', 0),
+      (5,'sumptring', 1);
 
       INSERT INTO notes(title, content, visible, user_id, created_at) VALUES
       ('Test 1', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut veritatis consequuntur asperiores necessitatibus, officia itaque qui similique deleniti quos reiciendis dolor porro architecto vel cupiditate eligendi dicta iusto error culpa? Odio qui voluptate itaque deleniti eius iste quos quisquam sed cumque minus a natus laborum et molestiae, dignissimos eligendi vitae sequi rerum maiores deserunt, recusandae, in repellat. Odio, quam iste. Ratione doloremque aliquam aperiam voluptatibus voluptatum sed magnam beatae, recusandae dolore doloribus hic officia veniam dolor? Vitae atque officiis odit corrupti, dolorem dolor cum facere perferendis nesciunt tenetur. Aspernatur, quisquam! Tenetur voluptate itaque provident voluptatum, non ab ex ut dignissimos veniam odio laborum alias numquam earum asperiores, autem recusandae tempora pariatur mollitia quae eaque dolorem? Voluptas reprehenderit dolores voluptatibus hic!', 1, 1, '${new Date('2023-02-12').toISOString()}'),
       
-      ('Test 2', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut veritatis consequuntur asperiores necessitatibus, officia itaque qui similique deleniti quos reiciendis dolor porro architecto vel cupiditate eligendi dicta iusto error culpa? Odio qui voluptate itaque deleniti eius iste quos quisquam sed cumque minus a natus laborum et molestiae, dignissimos eligendi vitae sequi rerum maiores deserunt, recusandae, in repellat.', 0, 2, '${new Date('2023-02-10')}'),
+      ('Test 2', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut veritatis consequuntur asperiores necessitatibus, officia itaque qui similique deleniti quos reiciendis dolor porro architecto vel cupiditate eligendi dicta iusto error culpa? Odio qui voluptate itaque deleniti eius iste quos quisquam sed cumque minus a natus laborum et molestiae, dignissimos eligendi vitae sequi rerum maiores deserunt, recusandae, in repellat.', 0, 2, '${new Date('2023-02-09').toISOString()}'),
       
       
-      ('Test 3', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut veritatis consequuntur asperiores necessitatibus, officia itaque qui similique deleniti quos reiciendis dolor porro architecto vel cupiditate eligendi dicta iusto error culpa?', 1, 2, '${new Date('2023-02-10')}'),
+      ('Test 3', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut veritatis consequuntur asperiores necessitatibus, officia itaque qui similique deleniti quos reiciendis dolor porro architecto vel cupiditate eligendi dicta iusto error culpa?', 1, 2, '${new Date('2023-02-10').toISOString()}'),
       
-      ('Test 4', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut veritatis consequuntur asperiores necessitatibus, officia itaque qui similique deleniti quos reiciendis dolor porro architecto vel cupiditate eligendi dicta iusto error culpa?', 1, 3, '${new Date('2023-02-10')}'),
+      ('Test 4', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut veritatis consequuntur asperiores necessitatibus, officia itaque qui similique deleniti quos reiciendis dolor porro architecto vel cupiditate eligendi dicta iusto error culpa?', 1, 3, '${new Date('2023-02-10').toISOString()}'),
       
-      ('Test 5', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut veritatis consequuntur asperiores necessitatibus, officia itaque qui similique deleniti quos reiciendis dolor porro architecto vel cupiditate eligendi dicta iusto error culpa?', 1, 1, '${new Date('2023-02-09')}');
+      ('Test 5', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut veritatis consequuntur asperiores necessitatibus, officia itaque qui similique deleniti quos reiciendis dolor porro architecto vel cupiditate eligendi dicta iusto error culpa?', 1, 1, '${new Date('2023-02-09').toISOString()}');
     `,
     err => {
       if(err) {

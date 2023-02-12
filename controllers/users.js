@@ -1,9 +1,36 @@
+const sqlite = require('sqlite3');
+
 exports.users_list = function (req, res, next) {
-  res.send("NOT IMPLEMENTED: Liste des users !");
+  const db = new sqlite.Database('model/clipboard.db', err => {
+    if(err) console.log("Erreur lors de l'ouverture de la base de données !");
+  });
+
+  db.all("SELECT * FROM users ORDER BY username", (err, result) => {
+    if(err){
+      return next(err);
+    }
+    
+    res.render('users_list', {title: 'Liste des utilisateurs', users_list: result});
+  })
+  
+  db.close();
 }
 
 exports.user_detail = function(req, res, next) {
-  res.send("NOT IMPLEMENTED: Détail d'un user: " + req.params.id);
+  const db = new sqlite.Database('model/clipboard.db', err => {
+    if(err) console.log("Erreur lors de l'ouverture de la base de données !");
+  });
+
+  db.all("SELECT * FROM notes WHERE user_id=? ORDER BY created_at DESC",[req.params.id], (err, result) => {
+    if(err) {
+      return next(err);
+    }
+
+    res.render('user_notes', {title: "Liste des notes", notes_list: result});
+  });
+  
+  db.close();
+
 }
 
 exports.user_create_get = function (req, res, next) {
